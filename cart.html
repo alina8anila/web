@@ -7,6 +7,54 @@
     <link rel="stylesheet" href="styles.css">
 </head>
   <body>
-   
+    <main class="cart">
+      <section class="add">
+        <label>Назва товару
+          <input type="text" name="Назва товару">
+        </label>
+        <button type="submit">Додати</button>
+        
+        <ul>
+          <li>
+            <label>Дрон
+              <input type="number" name="кількість товару">
+            </label>
+            <button type="submit">Купити</button>
+            <button type="reset">×</button>
+          </li>
+          <li>
+            <label>Танк
+              <input type="number" name="кількість товару">
+            </label>
+            <button type="submit">Купити</button>
+            <button type="reset">×</button>
+          </li>
+          <li>
+            <label>Гармата
+              <input type="number" name="кількість товару">
+            </label>
+            <button type="submit">Купити</button>
+            <button type="reset">×</button>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="summary">
+        <section>
+          <h2>Залишилося</h2>
+            <ul>
+              <li>Дрон<span class="number">1</span></li>
+              <li>Танк<span class="number">2</span></li>
+              <li>Гармата<span class="number">3</span></li>
+            </ul>
+        </section>
+        <section>
+          <h2>Куплено</h2>
+          <ul>
+          </ul>
+        </section>
+      </aside>
+
+    </main>
   </body>
 </html>
