@@ -148,7 +148,7 @@ body {
   position: fixed;
   bottom: 0;
   left: 20px;
-  background: #4a0080;
+  background: #5e089b;
   color: white;
   padding: 7px 16px;
   border-radius: 8px 8px 0 0;
@@ -162,18 +162,18 @@ body {
 }
 
 .badge:hover {
-  height: 64px;
-  background: #7b00cc;
+  height: 80px;
+  background: #5409d6;
 }
 
 .badge-front {
   line-height: 30px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .badge-back {
-  font-size: 12px;
-  line-height: 30px;
+  font-size: 15px;
+  line-height: 20px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -186,8 +186,8 @@ body {
 @media print {
   .badge {
     background: white;
-    color: #4a0080;
-    border: 2px solid #4a0080;
+    color: #5e089b;
+    border: 2px solid #5e089b;
     height: 64px;
   }
   .badge-back {
@@ -208,7 +208,7 @@ body {
   bottom: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
-  background: #4a0080;
+  background: #5e089b;
   color: white;
   padding: 4px 10px;
   border-radius: 6px;
