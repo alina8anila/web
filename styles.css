@@ -1,0 +1,31 @@
+/*.number {
+  background: orange;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}*/
+
+.number{
+    background: coral;
+    color: white;
+    border-radius: 70%;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    display: inline-flex;
+}
+
+.add > button{
+    background: blue;
+    color:white
+}
+
+[type="reset"] {
+    background: red;
+    color:white
+}
