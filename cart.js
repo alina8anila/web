@@ -28,6 +28,27 @@ addInput.addEventListener("keydown", (event) => {
 });
 
 cartList.addEventListener("click", (event) => {
+  const label = event.target.closest("label");
+  if (label){
+    const item = label.closest("li");
+    const statusBtn = item.querySelector("button:not([class]):not([type=reset])");
+    if (statusBtn && statusBtn.textContent === "Куплено") {
+      const input = document.createElement("input");
+      input.type = "text";
+      input.value = label.textContent;
+      label.replaceWith(input);
+      input.focus();
+      input.select();
+
+      input.addEventListener("blur", () => {
+        const newLabel = document.createElement("label");
+        newLabel.textContent = input.value.trim() || oldName;
+        input.replaceWith(newLabel);
+      });
+    }
+    return;
+  }
+
   const button = event.target.closest("button");
 
   if (!button) return;

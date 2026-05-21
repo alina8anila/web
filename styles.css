@@ -59,6 +59,15 @@ body {
   border-radius: 4px;
 }
 
+.add li input[type="text"] {
+  flex: 1;
+  padding: 4px 8px;
+  border: 1px solid #2d6be4;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: bold;
+}
+
 
 [type="reset"] {
   background: #e03030;
