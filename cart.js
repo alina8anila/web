@@ -4,6 +4,13 @@ const boughtList = document.querySelector(".summary section:last-child ul");
 const addInput = document.querySelector(".add input");
 const addBtn = document.querySelector(".butadd");
 
+document.querySelectorAll(".list li").forEach(li => {
+  const statusBtn = li.querySelector("button:not([class]):not([type=reset])");
+  if (statusBtn && statusBtn.textContent === "Не куплено") {
+    li.querySelector("label").style.textDecoration = "line-through";
+  }
+});
+
 function addItem(name){
   const li = document.createElement("li");
   li.innerHTML = `
@@ -32,10 +39,11 @@ cartList.addEventListener("click", (event) => {
   if (label){
     const item = label.closest("li");
     const statusBtn = item.querySelector("button:not([class]):not([type=reset])");
-    if (statusBtn && statusBtn.textContent === "Куплено") {
+  if (statusBtn && statusBtn.textContent === "Куплено") {
+      const oldName = label.textContent;
       const input = document.createElement("input");
       input.type = "text";
-      input.value = label.textContent;
+      input.value = oldName;
       label.replaceWith(input);
       input.focus();
       input.select();
@@ -67,9 +75,18 @@ cartList.addEventListener("click", (event) => {
   else if(button.getAttribute("class")==="btn-minus" && currentQuantity > 1) quantity.textContent = currentQuantity - 1;
   else if(button.textContent === "Куплено"){
     item.innerHTML=`
-     <label>${item.querySelector("label").textContent}</label>
+     <label style="text-decoration: line-through">${item.querySelector("label").textContent}</label>
     <span class="qty">${currentQuantity}</span>
     <button>Не куплено</button>`;
+  }
+  else if(button.textContent === "Не куплено"){
+    item.innerHTML=`
+    <label>${item.querySelector("label").textContent}</label>
+    <button data-tooltip="Зменшити кількість" type="button" class="btn-minus">−</button>
+    <span class="qty">${currentQuantity}</span>
+    <button data-tooltip="Збільшити кількість" type="button" class="btn-plus">+</button>
+    <button>Куплено</button>
+    <button data-tooltip="Видалити товар" type="reset">×</button>`;
   }
   updateSummary();
 });
