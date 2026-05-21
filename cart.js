@@ -10,6 +10,7 @@ document.querySelectorAll(".list li").forEach(li => {
     li.querySelector("label").style.textDecoration = "line-through";
   }
 });
+updateSummary();
 
 function addItem(name){
   const li = document.createElement("li");
@@ -21,6 +22,7 @@ function addItem(name){
     <button>Куплено</button>
     <button data-tooltip="Видалити товар" type="reset">×</button>`;
   cartList.append(li);
+  updateSummary();
 }
 
 addBtn.addEventListener("click", () => {
@@ -52,6 +54,7 @@ cartList.addEventListener("click", (event) => {
         const newLabel = document.createElement("label");
         newLabel.textContent = input.value.trim() || oldName;
         input.replaceWith(newLabel);
+        updateSummary();
       });
     }
     return;
@@ -90,3 +93,18 @@ cartList.addEventListener("click", (event) => {
   }
   updateSummary();
 });
+
+
+function updateSummary(){
+  remainingList.innerHTML = "";
+  boughtList.innerHTML = "";
+
+  cartList.querySelectorAll("li").forEach(li => {
+    const name = li.querySelector("label").textContent;
+    const qty = li.querySelector(".qty").textContent;
+    const statusBtn = li.querySelector("button:not([class]):not([type=reset])");
+    const html = `<li>${name}<span class="number">${qty}</span></li>`;
+    if (statusBtn && statusBtn.textContent === "Не куплено") remainingList.innerHTML += html;
+    else boughtList.innerHTML += html;
+  });
+}
