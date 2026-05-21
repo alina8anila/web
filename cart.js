@@ -30,18 +30,25 @@ addInput.addEventListener("keydown", (event) => {
 cartList.addEventListener("click", (event) => {
   const button = event.target.closest("button");
 
-  if(!button) return;
+  if (!button) return;
 
   const item = button.closest("li");
   const quantity = item.querySelector(".qty");
   const currentQuantity = Number(quantity.textContent);
 
-  if(button.type === "reset"){
+  if (button.type === "reset"){
     item.remove();
+    updateSummary();
     return;
   }
 
   if(button.getAttribute("class")==="btn-plus") quantity.textContent = currentQuantity + 1;
   else if(button.getAttribute("class")==="btn-minus" && currentQuantity > 1) quantity.textContent = currentQuantity - 1;
-
+  else if(button.textContent === "Куплено"){
+    item.innerHTML=`
+     <label>${item.querySelector("label").textContent}</label>
+    <span class="qty">${currentQuantity}</span>
+    <button>Не куплено</button>`;
+  }
+  updateSummary();
 });
