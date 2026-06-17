@@ -1,28 +1,28 @@
-# BuyList — Кошик покупок
+# BuyList — Shopping Cart
 
-Простий веб-додаток для ведення списку покупок на чистому HTML, CSS та JavaScript (без бібліотек і збірки).
+A simple web app for keeping a shopping list, built with plain HTML, CSS, and JavaScript (no libraries, no build step).
 
-## Можливості
+## Features
 
-- Додавання нового товару за назвою (кнопка «Додати» або клавіша Enter)
-- Зміна кількості товару (`+` / `−`), мінімум — 1
-- Позначення товару як «Куплено» / «Не куплено»
-- Редагування назви купленого товару (клік по назві відкриває поле вводу)
-- Видалення товару зі списку (кнопка `×`)
-- Автоматичні підсумкові списки «Залишилося» та «Куплено» з кількістю по кожному товару
+- Add a new item by name (the "Add" button or the Enter key)
+- Change item quantity (`+` / `−`), minimum — 1
+- Mark an item as "Bought" / "Not bought"
+- Edit the name of a bought item (clicking the name opens an input field)
+- Remove an item from the list (the `×` button)
+- Automatic summary lists "Remaining" and "Bought" with the quantity for each item
 
-## Структура проєкту
+## Project structure
 
 ```
-cart.html    — розмітка сторінки
-styles.css   — стилі
-cart.js      — логіка кошика (рендеринг списку, обробка подій, підсумки)
+cart.html    — page markup
+styles.css   — styles
+cart.js      — cart logic (list rendering, event handling, summaries)
 ```
 
-## Запуск
+## Running
 
-Проєкт не потребує збірки чи сервера — достатньо відкрити `cart.html` у браузері.
+The project doesn't need a build step or a server — just open `cart.html` in a browser.
 
-## Автор
+## Author
 
-Alina Parashchiy
+Alina Parashchiy — [LinkedIn](https://www.linkedin.com/in/alina-parashchiy-26b776398/)
